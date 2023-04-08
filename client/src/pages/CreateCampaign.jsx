@@ -51,7 +51,7 @@ const CreateCampaign = () => {
         <div className="flex flex-wrap gap-[40px]">
           <FormField 
             labelName="Your Name *"
-            placeholder="John Doe"
+            placeholder="Kyrie Irving"
             inputType="text"
             value={form.name}
             handleChange={(e) => handleFormFieldChange('name', e)}
@@ -73,7 +73,7 @@ const CreateCampaign = () => {
             handleChange={(e) => handleFormFieldChange('description', e)}
           />
 
-        <div className="w-full flex justify-start items-center p-4 bg-[#8c6dfd] h-[120px] rounded-[10px]">
+        <div className="w-full flex justify-start items-center p-4 bg-[#008080] h-[120px] rounded-[10px]">
           <img src={money} alt="money" className="w-[40px] h-[40px] object-contain"/>
           <h4 className="font-epilogue font-bold text-[25px] text-white ml-[20px]">You will get 100% of the raised amount</h4>
         </div>
@@ -81,14 +81,14 @@ const CreateCampaign = () => {
         <div className="flex flex-wrap gap-[40px]">
           <FormField 
             labelName="Goal *"
-            placeholder="ETH 0.50"
+            placeholder="MATIC 0.50"
             inputType="text"
             value={form.target}
             handleChange={(e) => handleFormFieldChange('target', e)}
           />
           <FormField 
             labelName="End Date *"
-            placeholder="End Date"
+            placeholder="dd-mm-yyyy"
             inputType="date"
             value={form.deadline}
             handleChange={(e) => handleFormFieldChange('deadline', e)}

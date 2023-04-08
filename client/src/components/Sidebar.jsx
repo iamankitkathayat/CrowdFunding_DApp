@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// import { Icon } from 'react-icons-kit';
-import { sun } from 'react-icons-kit/feather/sun';
-import { moon } from 'react-icons-kit/feather/moon';
-import { useDarkMode } from 'react-dark-mode';
 
-import { logo } from '../assets';
+import { logo, sun } from '../assets';
 import { navlinks } from '../constants';
 
 const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => (
@@ -22,14 +18,6 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState('dashboard');
 
-  const [isDayMode, setIsDayMode] = useState(true);
-  const { toggle } = useDarkMode();
-
-  const handleModeChange = () => {
-    setIsDayMode(!isDayMode);
-    toggle();
-  };
-
   return (
     <div className="flex justify-between items-center flex-col sticky top-5 h-[93vh]">
       <Link to="/">
@@ -39,12 +27,12 @@ const Sidebar = () => {
       <div className="flex-1 flex flex-col justify-between items-center bg-[#1c1c24] rounded-[20px] w-[76px] py-4 mt-12">
         <div className="flex flex-col justify-center items-center gap-3">
           {navlinks.map((link) => (
-            <Icon
+            <Icon 
               key={link.name}
               {...link}
               isActive={isActive}
               handleClick={() => {
-                if (!link.disabled) {
+                if(!link.disabled) {
                   setIsActive(link.name);
                   navigate(link.link);
                 }
@@ -53,17 +41,7 @@ const Sidebar = () => {
           ))}
         </div>
 
-        {/* <Link to="/">
-          <Icon styles="bg-[#1c1c24] shadow-secondary" imgUrl={sun} />
-        </Link> */}
-
-        <Icon
-          styles={{ backgroundColor: '#1c1c24', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.3)' }}
-          icon={isDayMode ? sun : moon}
-          onClick={handleModeChange}
-        />
-
-
+        <Icon styles="bg-[#1c1c24] shadow-secondary" imgUrl={sun} />
       </div>
     </div>
   )
