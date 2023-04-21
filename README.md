@@ -1,7 +1,5 @@
 # CrowdFunding_DApp
 
-# CrowdFunding_DApp
-
 Use the CLI to create a web application with the React and JavaScript SDKs pre-configured:
 
 npx thirdweb create --app
