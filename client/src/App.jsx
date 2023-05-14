@@ -15,7 +15,7 @@ const App = () => {
         <Navbar />
 
         <Routes>
-           "/
+        </Routes>
       </div>
     </div>
   )
